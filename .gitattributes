@@ -1,0 +1,2 @@
+# Bài nộp phải giữ nguyên byte (sha256 trong manifest.csv và .sha256): không đổi LF/CRLF khi clone
+submission/** -text

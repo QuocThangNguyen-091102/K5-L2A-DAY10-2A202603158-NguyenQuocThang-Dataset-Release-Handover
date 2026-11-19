@@ -1,0 +1,206 @@
+{
+ "note": "Ứng viên lỗi gán nhãn: chưa phải lỗi. Mở ảnh, ghi review_log.csv.",
+ "rule_errors": [
+  {
+   "type": "invalid_class",
+   "target": "000000008762",
+   "why": "class_id ngoài 0-79"
+  },
+  {
+   "type": "wrong_hash",
+   "target": "000000009914",
+   "why": "sha256 của file ảnh khác manifest"
+  },
+  {
+   "type": "guideline_mismatch",
+   "target": "000000017379",
+   "why": "ảnh ghi v1.2, job J07 ghi v1.3"
+  },
+  {
+   "type": "thing_overlap",
+   "target": "000000019109",
+   "why": "segment [4078659]: area khai > số pixel thật trong mask"
+  },
+  {
+   "type": "duplicate_box",
+   "target": "000000020107",
+   "why": "hai box cùng lớp, cùng kích thước, lệch <= 3 px"
+  },
+  {
+   "type": "duplicate_box",
+   "target": "000000021465",
+   "why": "hai box cùng lớp, cùng kích thước, lệch <= 3 px"
+  },
+  {
+   "type": "invalid_class",
+   "target": "000000022969",
+   "why": "class_id ngoài 0-79"
+  },
+  {
+   "type": "bbox_out_of_bounds",
+   "target": "000000025424",
+   "why": "box {'cls': 32, 'x': 0.971104, 'y': 0.07225, 'w': 0.154949, 'h': 0.029656} vượt khỏi ảnh"
+  },
+  {
+   "type": "scene_leak",
+   "target": "scene_283",
+   "why": "cảnh nằm ở {'train': 4, 'val': 1}"
+  }
+ ],
+ "candidates": [
+  {
+   "image": "000000000285",
+   "type": "class_swap|category_swap",
+   "score": 1.998,
+   "why": "box 'bear' trùng segment 'bed' (IoU 1.00)",
+   "box": 0,
+   "seg": 5931152,
+   "det_class": "bear",
+   "pan_class": "bed",
+   "others": []
+  },
+  {
+   "image": "000000015254",
+   "type": "class_swap|category_swap",
+   "score": 1.996,
+   "why": "box 'spoon' trùng segment 'carrot' (IoU 1.00)",
+   "box": 7,
+   "seg": 1199075,
+   "det_class": "spoon",
+   "pan_class": "carrot",
+   "others": []
+  },
+  {
+   "image": "000000009891",
+   "type": "class_swap|category_swap",
+   "score": 1.981,
+   "why": "box 'handbag' trùng segment 'backpack' (IoU 0.98)",
+   "box": 11,
+   "seg": 2567984,
+   "det_class": "handbag",
+   "pan_class": "backpack",
+   "others": []
+  },
+  {
+   "image": "000000020247",
+   "type": "instance_merge",
+   "score": 1.665,
+   "why": "segment 'bear' (49310px) trải trên 2 box cùng lớp",
+   "seg": 5397864,
+   "boxes": [
+    0,
+    1
+   ],
+   "pan_class": "bear",
+   "others": []
+  },
+  {
+   "image": "000000017207",
+   "type": "missing_box",
+   "score": 1.499,
+   "why": "segment 'bus' 153321px (49.9% ảnh) không có box riêng (tối đa 0% pixel trong box cùng lớp khác)",
+   "seg": 5465195,
+   "pan_class": "bus",
+   "area": 153321,
+   "natural_hint": false,
+   "dup_iou": 0.0,
+   "others": []
+  },
+  {
+   "image": "000000005060",
+   "type": "missing_box",
+   "score": 1.057,
+   "why": "segment 'person' 17584px (5.7% ảnh) không có box riêng (tối đa 0% pixel trong box cùng lớp khác)",
+   "seg": 3884104,
+   "pan_class": "person",
+   "area": 17584,
+   "natural_hint": false,
+   "dup_iou": 0.0,
+   "others": []
+  },
+  {
+   "image": "000000001818",
+   "type": "missing_box",
+   "score": 0.642,
+   "why": "segment 'zebra' 120106px (44.2% ảnh) không có box riêng (tối đa 50% pixel trong box cùng lớp khác); TRÙNG KHUNG box cùng lớp IoU 0.72 -> có thể lệch tự nhiên (box trùng đã bị bỏ ở nguồn)",
+   "seg": 8092282,
+   "pan_class": "zebra",
+   "area": 120106,
+   "natural_hint": true,
+   "dup_iou": 0.718,
+   "others": []
+  },
+  {
+   "image": "000000007278",
+   "type": "bbox_drift",
+   "score": 0.427,
+   "why": "segment 'person' thò ra ngoài box 16% cạnh (19px), 88% pixel trong box, IoU 0.57, 0/4 cạnh khớp",
+   "box": 0,
+   "seg": 6973051,
+   "det_class": "person",
+   "pan_class": "person",
+   "protrude": 0.159,
+   "cover": 0.883,
+   "iou": 0.573,
+   "same_edges": 0,
+   "natural_hint": false,
+   "others": []
+  },
+  {
+   "image": "000000012748",
+   "type": "missing_box",
+   "score": 0.385,
+   "why": "segment 'person' 56935px (18.5% ảnh) không có box riêng (tối đa 94% pixel trong box cùng lớp khác); TRÙNG KHUNG box cùng lớp IoU 0.89 -> có thể lệch tự nhiên (box trùng đã bị bỏ ở nguồn)",
+   "seg": 4079972,
+   "pan_class": "person",
+   "area": 56935,
+   "natural_hint": true,
+   "dup_iou": 0.887,
+   "others": []
+  },
+  {
+   "image": "000000000872",
+   "type": "missing_box",
+   "score": 0.32,
+   "why": "segment 'person' 47692px (12.0% ảnh) không có box riêng (tối đa 96% pixel trong box cùng lớp khác); TRÙNG KHUNG box cùng lớp IoU 0.78 -> có thể lệch tự nhiên (box trùng đã bị bỏ ở nguồn)",
+   "seg": 12234672,
+   "pan_class": "person",
+   "area": 47692,
+   "natural_hint": true,
+   "dup_iou": 0.781,
+   "others": []
+  },
+  {
+   "image": "000000004134",
+   "type": "bbox_drift",
+   "score": 0.116,
+   "why": "segment 'person' thò ra ngoài box 1% cạnh (0px), 100% pixel trong box, IoU 0.67, 3/4 cạnh khớp; segment nằm trọn trong box và 3 cạnh khớp -> có thể bị che (lệch tự nhiên)",
+   "box": 8,
+   "seg": 197638,
+   "det_class": "person",
+   "pan_class": "person",
+   "protrude": 0.005,
+   "cover": 1.0,
+   "iou": 0.67,
+   "same_edges": 3,
+   "natural_hint": true,
+   "others": []
+  },
+  {
+   "image": "000000010995",
+   "type": "bbox_drift",
+   "score": 0.039,
+   "why": "segment 'bed' thò ra ngoài box 2% cạnh (5px), 100% pixel trong box, IoU 0.96, 2/4 cạnh khớp",
+   "box": 0,
+   "seg": 3031871,
+   "det_class": "bed",
+   "pan_class": "bed",
+   "protrude": 0.019,
+   "cover": 0.999,
+   "iou": 0.961,
+   "same_edges": 2,
+   "natural_hint": false,
+   "others": []
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+image,type,verdict,note
+000000000285,category_swap,confirmed,"Cận mặt một con gấu nâu lông vàng trên bãi cỏ; detection ghi bear là đúng, panoptic ghi segment cùng vị trí là bed (giường) là sai"
+000000015254,class_swap,confirmed,"Box 7 bao trọn bó cà rốt cam trong khay nhựa xanh lá nhưng detection ghi spoon; panoptic ghi carrot đúng; chiếc thìa thật nằm riêng bên phải, đã có box 0 spoon"
+000000009891,category_swap,confirmed,"Phóng to vùng sau chân người đàn ông: mép trên túi vải xanh đậm có hai quai xách da nâu ngắn (túi xách/du lịch), không có quai đeo vai; detection ghi handbag hợp lý, panoptic ghi backpack sai"
+000000020247,instance_merge,confirmed,"Hai con gấu nâu tách rời nhau (một con ló ở mép trái, một con lông bạc đang đi tới giữa ảnh) nhưng panoptic tô chung một segment bear; detection có đủ 2 box riêng"
+000000017207,missing_box,confirmed,"Đuôi xe buýt vàng-trắng biển DL1P 4553 chiếm khoảng nửa ảnh, panoptic có segment bus nhưng detection không có box bus nào (chỉ có car, person, motorcycle ở hai bên)"
+000000005060,missing_box,confirmed,"Người đàn ông áo polo xanh ngồi xếp bằng trong gương, cầm điện thoại chụp; panoptic có segment person nhưng detection chỉ có box cell phone, thiếu box cho người"
+000000007278,bbox_drift,confirmed,"Người lướt sóng áo đỏ trên ngọn sóng: box person lệch lên trên và sang trái, góc trên trái box chỉ có nước trống, đầu người chạm mép dưới và cánh tay phải thò ra ngoài mép phải box"
+000000010995,bbox_drift,confirmed,"Giường ga kẻ ô cạnh cửa sổ: box bed cùng kích thước với vật nhưng bị dời xuống 5 px (cạnh trên 218 so với mép giường 213), cạnh trên box cắt mất mép trên của giường; box đúng thì phải chứa trọn giường"
+000000001818,missing_box,rejected,"Ngựa vằn mẹ đứng che gần hết khung hình với ngựa con chui dưới bụng; ngựa mẹ không có box riêng nhưng khung của nó trùng box ngựa con IoU 0.72 (>0.7): nguồn đã bỏ box trùng khung trước khi giao, lệch tự nhiên"
+000000012748,missing_box,rejected,"Người đàn ông áo đỏ bế em bé áo trắng sát người: chỉ có một box person (theo em bé), khung người lớn trùng box đó IoU 0.89; hai người chồng khít nên nguồn đã gộp box trùng khung, không phải box bị xoá trong lô"
+000000000872,missing_box,rejected,"Cầu thủ chạy áo trắng đội mũ xanh chồng lên người bắt bóng áo xanh lá phía sau; khung người chạy trùng box còn lại IoU 0.78: cặp box trùng khung đã bị gộp từ nguồn, lệch tự nhiên do che khuất"
+000000004134,bbox_drift,rejected,"Tiệc đứng đông người: box 8 khớp đúng cạnh trên, dưới, phải với người mặc vest tối phía sau; chỉ cạnh trái rộng hơn vì người vest đen đứng trước che mất nửa trái, box đúng, segment bị che"
